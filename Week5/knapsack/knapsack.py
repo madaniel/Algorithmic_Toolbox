@@ -3,8 +3,8 @@
 
 def optimal_weight(W, w):
     # Init result
-    result = [0] * W
-    last = [0] * W
+    result = [0] * (W + 1)
+    last = [0] * (W + 1)
 
     # Looping over bars
     for bar in w:
@@ -31,4 +31,4 @@ if __name__ == '__main__':
     W, n, *w = list(map(int, input.split()))
     print(optimal_weight(W, w))
 
-    #print(optimal_weight(10, [1, 4, 8]))
+    #print(optimal_weight(10, [3, 5, 3, 3, 5]))
