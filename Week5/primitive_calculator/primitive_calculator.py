@@ -1,32 +1,18 @@
 # Uses python3
-
-import math
-"""
-def better(price):
-    coins_list = [1, 5, 6]
-    money_list = [math.inf] * (price + 1)
-    money_list[0] = 0
-
-    for c in coins_list:
-        for idx, m in enumerate(money_list):
-            if idx >= c:
-                money_list[idx] = min(money_list[idx], (money_list[idx-c] + 1))
-
-    return money_list
-"""
+#from math import inf
 
 
 def better(number):
-    max_division_list = [math.inf] * (number + 1)
+    max_division_list = [number+1] * (number + 1)
     max_division_list[0] = 0
     max_division_list[1] = 0
 
-    operations = [""] * (number + 1)
+    operations = [number+1] * (number + 1)
 
     for idx, m in enumerate(max_division_list):
         if m == 0:
             continue
-        min_list = [math.inf] * 3
+        min_list = [number+1] * 3
 
         # Option 1 - last number + 1
         min_list[0] = (max_division_list[idx-1] + 1)
